@@ -8,7 +8,7 @@ const cocteles = [
     items: [
       'THE Panda',
       'Monteño con el Sol Afuera',
-      'Oasis Calihe Azuano',
+      'Oasis Calibre Azuano',
       'Aperol Spritz',
       '19 de Marzo',
     ],
