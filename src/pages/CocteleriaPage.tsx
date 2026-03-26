@@ -42,7 +42,7 @@ const bebidasSinAlcohol = [
       'Chinola',
       'Limón',
       'Naranja',
-      'Sandía',
+      'Sandía con Limón',
       'Melón con Piña',
       'Verde',
     ],

@@ -6,8 +6,7 @@ import MagneticButton from '../components/MagneticButton';
 import { menuCategories, toursData } from '../data/menuData';
 import { containerVariants, cardVariants, fadeInUp } from '../utils/easings';
 
-const HERO_IMAGE =
-  'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1920';
+const HERO_IMAGE = '/imagenes/hero-portada.jpeg';
 
 /* ───── HOME ───── */
 export default function Home() {
