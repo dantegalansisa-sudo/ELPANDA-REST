@@ -1,5 +1,4 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import WhatsAppButton from './components/WhatsAppButton';
 import Navbar from './components/Navbar';
@@ -16,7 +15,6 @@ export default function App() {
   return (
     <BrowserRouter>
       <ScrollToTop />
-      <CustomCursor />
       <ScrollProgress />
       <WhatsAppButton />
       <Navbar />

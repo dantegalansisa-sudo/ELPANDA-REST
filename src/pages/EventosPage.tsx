@@ -10,6 +10,7 @@ const eventos = [
     desc: 'Celebración de las patronales de San Miguel en Playa Monte Río. Música, baile y sabor dominicano toda la noche.',
     location: 'Playa Monte Río, Azua',
     sponsors: 'Presidente · Rafael Hidalgo',
+    image: '/imagenes/29 palo.jpeg',
   },
   {
     day: '05',
@@ -18,6 +19,7 @@ const eventos = [
     desc: 'Una noche de tradición con palos, atabales y música folclórica dominicana. Comida, bebida y mucha energía.',
     location: 'Traba 701, Las Yavitas, Azua',
     sponsors: 'Presidente · Rafael Hidalgo',
+    image: '/imagenes/05 palo.jpeg',
   },
   {
     day: '15',
@@ -59,6 +61,11 @@ export default function EventosPage() {
               variants={cardVariants}
               whileHover={{ x: 6 }}
             >
+              {ev.image && (
+                <div className="evento-card__img">
+                  <img src={ev.image} alt={ev.title} />
+                </div>
+              )}
               <div className="evento-card__date">
                 <div className="evento-card__day">{ev.day}</div>
                 <div className="evento-card__month">{ev.month}</div>

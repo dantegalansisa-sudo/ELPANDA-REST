@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { useRef, useEffect, useState } from 'react';
+import { useRef } from 'react';
 import RevealText from '../components/RevealText';
 import MagneticButton from '../components/MagneticButton';
 import { menuCategories, toursData } from '../data/menuData';
@@ -8,50 +8,6 @@ import { containerVariants, cardVariants, fadeInUp } from '../utils/easings';
 
 const HERO_IMAGE =
   'https://images.pexels.com/photos/1174732/pexels-photo-1174732.jpeg?auto=compress&cs=tinysrgb&w=1920';
-
-/* ───── Animated Counter ───── */
-function AnimatedCounter({
-  value,
-  suffix = '',
-  prefix = '',
-}: {
-  value: number;
-  suffix?: string;
-  prefix?: string;
-}) {
-  const [count, setCount] = useState(0);
-  const ref = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (entry.isIntersecting) {
-          let start = 0;
-          const duration = 1500;
-          const step = (timestamp: number) => {
-            if (!start) start = timestamp;
-            const progress = Math.min((timestamp - start) / duration, 1);
-            setCount(Math.floor(progress * value));
-            if (progress < 1) requestAnimationFrame(step);
-          };
-          requestAnimationFrame(step);
-          observer.disconnect();
-        }
-      },
-      { threshold: 0.5 }
-    );
-    if (ref.current) observer.observe(ref.current);
-    return () => observer.disconnect();
-  }, [value]);
-
-  return (
-    <div ref={ref} className="stat-item__value">
-      {prefix}
-      {count}
-      <span className="stat-suffix">{suffix}</span>
-    </div>
-  );
-}
 
 /* ───── HOME ───── */
 export default function Home() {
@@ -62,13 +18,6 @@ export default function Home() {
   });
   const heroScale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
   const heroOpacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
-
-  const stats = [
-    { value: 10, suffix: ' botes', label: 'Botes de Tour' },
-    { value: 3, suffix: '', label: 'Playas Destino' },
-    { value: 9, suffix: '+', label: 'Categorías en el Menú' },
-    { value: 500, suffix: ' RD$', label: 'Tour por Persona' },
-  ];
 
   const contactInfo = [
     {
@@ -147,26 +96,40 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* ─── STATS ─── */}
-      <section className="stats-section">
-        <div className="stats-grid">
-          {stats.map((stat) => (
-            <motion.div
-              key={stat.label}
-              className="stat-item"
-              variants={fadeInUp}
-              initial="hidden"
-              whileInView="visible"
-              viewport={{ once: true, margin: '-50px' }}
-            >
-              <AnimatedCounter
-                value={stat.value}
-                suffix={stat.suffix}
-              />
-              <div className="stat-item__label">{stat.label}</div>
-            </motion.div>
-          ))}
-        </div>
+      {/* ─── TOUR PROMO ─── */}
+      <section className="tour-promo">
+        <motion.div
+          className="tour-promo__inner"
+          variants={fadeInUp}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <img
+            src="/imagenes/logo tour.jpeg"
+            alt="Tours Monte Río El Panda"
+            className="tour-promo__logo"
+          />
+          <div className="tour-promo__content">
+            <h2 className="tour-promo__title">Tours en Lancha por Playas Vírgenes</h2>
+            <p className="tour-promo__desc">
+              10 botes disponibles · 3 destinos paradisíacos · Desde <strong>$500 RD</strong> por persona
+            </p>
+            <div className="tour-promo__tags">
+              <span className="tour-promo__tag">🏝️ Playa El Barco</span>
+              <span className="tour-promo__tag">🏴‍☠️ Cueva de los Piratas</span>
+              <span className="tour-promo__tag">🌊 Playa Blanca</span>
+            </div>
+          </div>
+          <MagneticButton
+            href="https://wa.me/18498864256?text=Hola%2C%20quiero%20reservar%20un%20tour%20en%20lancha"
+            className="btn-primary"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            🚤 Reservar Tour
+          </MagneticButton>
+        </motion.div>
       </section>
 
       {/* ─── MENU PREVIEW ─── */}
