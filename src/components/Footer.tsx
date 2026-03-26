@@ -23,6 +23,7 @@ export default function Footer() {
             <ul className="footer__links">
               <li><Link to="/" className="footer__link">Inicio</Link></li>
               <li><Link to="/menu" className="footer__link">Menú</Link></li>
+              <li><Link to="/cocteleria" className="footer__link">Coctelería</Link></li>
               <li><Link to="/tours" className="footer__link">Tours</Link></li>
               <li><Link to="/eventos" className="footer__link">Eventos</Link></li>
               <li><Link to="/reservaciones" className="footer__link">Reservaciones</Link></li>

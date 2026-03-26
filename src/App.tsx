@@ -9,6 +9,7 @@ import MenuCategory from './pages/MenuCategory';
 import ToursPage from './pages/ToursPage';
 import EventosPage from './pages/EventosPage';
 import ReservacionesPage from './pages/ReservacionesPage';
+import CocteleriaPage from './pages/CocteleriaPage';
 import ScrollToTop from './components/ScrollToTop';
 
 export default function App() {
@@ -23,6 +24,7 @@ export default function App() {
         <Route path="/menu" element={<MenuPage />} />
         <Route path="/menu/:categoryId" element={<MenuCategory />} />
         <Route path="/tours" element={<ToursPage />} />
+        <Route path="/cocteleria" element={<CocteleriaPage />} />
         <Route path="/eventos" element={<EventosPage />} />
         <Route path="/reservaciones" element={<ReservacionesPage />} />
       </Routes>

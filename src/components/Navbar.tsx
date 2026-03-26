@@ -16,6 +16,7 @@ export default function Navbar() {
   const links = [
     { to: '/', label: 'Inicio' },
     { to: '/menu', label: 'Menú' },
+    { to: '/cocteleria', label: 'Coctelería' },
     { to: '/tours', label: 'Tours' },
     { to: '/eventos', label: 'Eventos' },
     { to: '/reservaciones', label: 'Reservaciones' },
