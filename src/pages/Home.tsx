@@ -231,8 +231,46 @@ export default function Home() {
             ))}
           </motion.div>
 
+          {/* Galería de experiencia */}
           <motion.div
-            style={{ textAlign: 'center' }}
+            className="tour-experience"
+            variants={fadeInUp}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: '-50px' }}
+          >
+            <h3 className="tour-experience__title">La Experiencia</h3>
+            <p className="tour-experience__subtitle">
+              Vive la aventura y disfruta los mejores mariscos del Caribe
+            </p>
+
+            <div className="tour-experience__gallery">
+              {/* Video principal */}
+              <div className="tour-experience__video">
+                <video
+                  controls
+                  poster="/imagenes/plato-paella.jpeg"
+                  className="tour-video"
+                >
+                  <source src="/imagenes/tour-video.mp4" type="video/mp4" />
+                  Tu navegador no soporta video HTML5.
+                </video>
+              </div>
+
+              {/* Grid de fotos */}
+              <div className="tour-experience__photos">
+                <img src="/imagenes/plato-paella.jpeg" alt="Paella de mariscos" />
+                <img src="/imagenes/plato-langosta.jpeg" alt="Langosta" />
+                <img src="/imagenes/plato-langosta-criolla.jpeg" alt="Langosta criolla" />
+                <img src="/imagenes/plato-pescado-frito.jpeg" alt="Pescado frito" />
+                <img src="/imagenes/plato-bandeja.jpeg" alt="Bandeja de mariscos" />
+                <img src="/imagenes/plato-pescado-tostones.jpeg" alt="Pescado con tostones" />
+              </div>
+            </div>
+          </motion.div>
+
+          <motion.div
+            style={{ textAlign: 'center', marginTop: 48 }}
             variants={fadeInUp}
             initial="hidden"
             whileInView="visible"
