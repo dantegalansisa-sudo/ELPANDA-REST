@@ -171,6 +171,20 @@ export default function Home() {
                 </Link>
               </motion.div>
             ))}
+
+            {/* Bebidas Card */}
+            <motion.div variants={cardVariants}>
+              <Link to="/cocteleria" className="category-card category-card--bebidas">
+                <div className="category-card__emoji">🍹</div>
+                <div className="category-card__info">
+                  <div className="category-card__name">Bebidas</div>
+                  <div className="category-card__count">
+                    Cócteles y más
+                  </div>
+                </div>
+                <span className="category-card__arrow">→</span>
+              </Link>
+            </motion.div>
           </motion.div>
 
           <motion.div

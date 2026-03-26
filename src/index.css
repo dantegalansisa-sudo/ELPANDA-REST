@@ -413,6 +413,13 @@ img { display: block; max-width: 100%; }
   transition: transform var(--transition-fast);
 }
 .category-card:hover .category-card__arrow { transform: translateX(4px); }
+.category-card--bebidas {
+  background: linear-gradient(135deg, rgba(0, 180, 216, 0.06), rgba(255, 107, 0, 0.04));
+}
+.category-card--bebidas:hover {
+  border-color: var(--color-secondary);
+  box-shadow: 0 8px 32px rgba(255, 107, 0, 0.2);
+}
 
 /* =================== TOURS HOME =================== */
 .tours-home {
